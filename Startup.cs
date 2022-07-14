@@ -1,3 +1,4 @@
+using hungryApiCore.Configuration;
 using HungryApiCore.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,6 +40,8 @@ namespace hungryApiCore
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "hungryApiCore", Version = "v1" });
             });
+
+            services.ResolveDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
