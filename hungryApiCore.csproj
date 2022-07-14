@@ -2,10 +2,37 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="HungryApiCore.Domain\**" />
+    <Content Remove="HungryApiCore.Domain\**" />
+    <EmbeddedResource Remove="HungryApiCore.Domain\**" />
+    <None Remove="HungryApiCore.Domain\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HungryApiCore.Data\HungryApiCore.Data.csproj" />
+    <ProjectReference Include="..\HungryApiCore.Servico\HungryApiCore.Servico.csproj" />
+    <ProjectReference Include="HungryApiCore.Domain\HungryApiCore.Domain.csproj" />
   </ItemGroup>
 
 </Project>
